@@ -32,7 +32,7 @@ public class PersonDTO {
     private String cpf;
 
     @NotNull
-    private LocalDate birthDate;
+    private String birthDate;
 
     @Valid
     @NotEmpty
