@@ -19,7 +19,7 @@ public class PersonUtils {
                 .firstName(FIRST_NAME)
                 .lastName(LAST_NAME)
                 .cpf(CPF_NUMBER)
-                .birthDate("22-08-1984")
+                //.birthDate("22-08-1984")
                 .phones(Collections.singletonList(PhoneUtils.createFakeDTO()))
                 .build();
     }
