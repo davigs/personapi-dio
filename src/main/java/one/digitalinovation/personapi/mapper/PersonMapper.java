@@ -2,7 +2,6 @@ package one.digitalinovation.personapi.mapper;
 
 import one.digitalinovation.personapi.dto.request.PersonDTO;
 import one.digitalinovation.personapi.entity.Person;
-import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
@@ -11,9 +10,8 @@ import org.mapstruct.factory.Mappers;
 public interface PersonMapper {
     PersonMapper INSTANCE = Mappers.getMapper(PersonMapper.class);
 
-    @Mapping(target = "birthDate", source = "birthDate", dateFormat = "dd-MM-yyyy")
+    @Mapping(target = "birthDate", source = "birthDate", dateFormat = "yyyy-MM-dd")
     Person toModel(PersonDTO personDTO);
 
-    @BeanMapping(ignoreByDefault = true)
     PersonDTO toDTO(Person person);
 }
