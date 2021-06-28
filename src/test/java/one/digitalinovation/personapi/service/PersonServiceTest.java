@@ -29,7 +29,6 @@ public class PersonServiceTest {
         PersonDTO personDTO = createFakeDTO();
         Person expectedSavedPerson = createFakeEntity();
 
-        when(personRepository.save(expectedSavedPerson)).thenReturn(expectedSavedPerson);
         when(personRepository.save(any(Person.class))).thenReturn(expectedSavedPerson);
 
         MessageResponseDTO expectedSuccessMessage = createExpectedSuccessMessage(expectedSavedPerson.getId());
@@ -39,7 +38,7 @@ public class PersonServiceTest {
     }
 
     private MessageResponseDTO createExpectedSuccessMessage(Long savedPersonId) {
-        return MessageResponseDTO.builder().message("Person successfully created with ID " + savedPersonId).build();
+        return MessageResponseDTO.builder().message("Created person with ID " + savedPersonId).build();
     }
 
 }
